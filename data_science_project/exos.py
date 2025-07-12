@@ -38,6 +38,14 @@
 
 # Exo 4
 import random
+
+def password_generator(val1,val2,val3,val4):
+        password_pre = val1 + val2 + val3 + val4
+        p_list = list(password_pre)
+        random.shuffle(p_list)
+        password = "".join(p_list)
+        return password
+    
 lowercase_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y', 'z']
 uppercase_letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T','U', 'V', 'W', 'X', 'Y', 'Z']
 digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -48,21 +56,15 @@ if strong_weak == "weak":
     p2 = "".join(random.choices(uppercase_letters, k=2))
     p3 = "".join(random.choices(digits, k=2))
     p4 = "".join(random.choices(symbols, k=2))
-    password_pre = p1 + p2 + p3 + p4
-    p_list = list(password_pre)
-    random.shuffle(p_list)
-    password = "".join(p_list)
-    print(f"Your password is {password}")
+    print(f"Your password is {password_generator(p1,p2,p3,p4)}")
+
 if strong_weak == "strong":
     p1 = "".join(random.choices(lowercase_letters, k=4))
     p2 = "".join(random.choices(uppercase_letters, k=4))
     p3 = "".join(random.choices(digits, k=4))
     p4 = "".join(random.choices(symbols, k=4))
-    password_pre = p1 + p2 + p3 + p4
-    p_list = list(password_pre)
-    random.shuffle(p_list)
-    password = "".join(p_list)
-    print(f"Your password is {password}")
+    print(f"Your password is {password_generator(p1,p2,p3,p4)}")
+
 
 
 
